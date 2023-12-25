@@ -5,6 +5,15 @@ const FinalRouteName = {
 		HomeRoute: `/${RouteName.GlobalRoute.HomeRoute}`,
 		AboutRoute: `/${RouteName.GlobalRoute.AboutRoute}`,
 		ContactRoute: `/${RouteName.GlobalRoute.ContactRoute}`,
+
+		PortfolioCardListRoute: `/${RouteName.GlobalRoute.PortfolioCardListRoute}`,
+		PortfolioCardRetrieveRoute: `/${RouteName.GlobalRoute.PortfolioCardRetrieveRoute}`,
+
+		EventCardListRoute: `/${RouteName.GlobalRoute.EventCardListRoute}`,
+		EventCardRetrieveRoute: `/${RouteName.GlobalRoute.EventCardRetrieveRoute}`,
+		
+		BlogCardListRoute: `/${RouteName.GlobalRoute.BlogCardListRoute}`,
+		BlogCardRetrieveRoute: `/${RouteName.GlobalRoute.BlogCardRetrieveRoute}`,
 	},
 	AuthRoute: {
 		LoginRoute: `/${RouteName.AuthRoute.LoginRoute}`,

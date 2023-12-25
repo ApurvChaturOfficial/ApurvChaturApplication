@@ -31,18 +31,14 @@ const HomePage = ({ ReduxUltimate }) => {
 	}, [])
 
 	// Extra Render
-	// useEffect(() => {
-	// 	console.log(Redux.state)
-	// }, [Redux.state])
+	useEffect(() => {
+		console.log(Redux.state)
+	}, [Redux.state])
 
   // JSX
   return (
     <React.Fragment>
-			{
-				ReduxUltimate.state.RequiredObject?.Loading ? "Loading..."
-				:
-      	<HomePageComponent Redux={Redux} ReduxUltimate={ReduxUltimate} />
-			}
+			<HomePageComponent Redux={Redux} ReduxUltimate={ReduxUltimate} />
     </React.Fragment>
   )
 }

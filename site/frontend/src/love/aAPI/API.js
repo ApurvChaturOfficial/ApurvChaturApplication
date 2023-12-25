@@ -13,12 +13,12 @@ const API = {
 					)
 				}, 
 			},
-			AboutAPI: {
+			PortfolioCardAPI: {
 				ListAPI: (props) => {
 					return (
 						APIBase({
 							method: "GET",
-							url: `/api/v1/about/list`,
+							url: `/api/v1/portfolio-card-page/list`,
 						})
 					)
 				}, 
@@ -26,17 +26,17 @@ const API = {
 					return (
 						APIBase({
 							method: "GET",
-							url: `/api/v1/about/retrieve/${props.id}`,
+							url: `/api/v1/portfolio-card-page/retrieve/${props.id}`,
 						})
 					)
 				}, 
-			},
-			ContactAPI: {
+			},		
+			EventCardAPI: {
 				ListAPI: (props) => {
 					return (
 						APIBase({
 							method: "GET",
-							url: `/api/v1/contact/list`,
+							url: `/api/v1/event-card-page/list`,
 						})
 					)
 				}, 
@@ -44,11 +44,29 @@ const API = {
 					return (
 						APIBase({
 							method: "GET",
-							url: `/api/v1/contact/retrieve/${props.id}`,
+							url: `/api/v1/event-card-page/retrieve/${props.id}`,
 						})
 					)
 				}, 
-			},
+			},		
+			BlogCardAPI: {
+				ListAPI: (props) => {
+					return (
+						APIBase({
+							method: "GET",
+							url: `/api/v1/blog-card-page/list`,
+						})
+					)
+				}, 
+				RetrieveAPI: (props) => {
+					return (
+						APIBase({
+							method: "GET",
+							url: `/api/v1/blog-card-page/retrieve/${props.id}`,
+						})
+					)
+				}, 
+			},		
 		},
 		ProtectedAPI: {
 			AuthenticatedAPI: {

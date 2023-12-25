@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 // react-router components
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,6 +15,15 @@ import GlobalComponent from 'src/love/cComponent/aGlobalComponent';
 
 
 const GlobalLayout = () => {
+  // Not Mine
+  const { pathname } = useLocation();
+
+  // Setting page scroll to 0 when changing the route
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+  }, [pathname]);
+
 	// Variables
 	const navigate = useNavigate()
 
@@ -25,22 +34,22 @@ const GlobalLayout = () => {
 		action: Action,
 	};
 
-	// API Calls
-	const APICalls = {
-		ProfileRetrieveAPICall: () => APIs.ProfileRetrieveAPI(Redux),
-		LogoutAPICall: () => APIs.LogoutAPI(navigate, Redux),
-	}
+	// // API Calls
+	// const APICalls = {
+	// 	ProfileRetrieveAPICall: () => APIs.ProfileRetrieveAPI(Redux),
+	// 	LogoutAPICall: () => APIs.LogoutAPI(navigate, Redux),
+	// }
 
 	// All Renders
-	// First Render
-	useEffect(() => {
-		APICalls.ProfileRetrieveAPICall()
-	}, [])
+	// // First Render
+	// useEffect(() => {
+	// 	APICalls.ProfileRetrieveAPICall()
+	// }, [])
 		
-	// Second Render
-	useEffect(() => {
-		Redux.state.ExtraObject?.Halchal && APICalls.ProfileRetrieveAPICall()
-	}, [Redux.state.ExtraObject])
+	// // Second Render
+	// useEffect(() => {
+	// 	Redux.state.ExtraObject?.Halchal && APICalls.ProfileRetrieveAPICall()
+	// }, [Redux.state.ExtraObject])
 		
 	// Extra Render
 	// useEffect(() => {
@@ -50,7 +59,7 @@ const GlobalLayout = () => {
   // JSX
   return (
 		<React.Fragment>
-			<GlobalComponent Redux={Redux} LogoutAPICall={APICalls.LogoutAPICall} >
+			<GlobalComponent Redux={Redux} >
 				<Outlet />
 			</GlobalComponent>
 		</React.Fragment>

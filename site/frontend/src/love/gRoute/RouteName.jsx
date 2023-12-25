@@ -3,6 +3,15 @@ const RouteName = {
 		HomeRoute: "",
 		AboutRoute: "about",
 		ContactRoute: "contact",
+
+		PortfolioCardListRoute: "portfolio-card-list",
+		PortfolioCardRetrieveRoute: "portfolio-card-retrieve",
+
+		EventCardListRoute: "event-card-list",
+		EventCardRetrieveRoute: "event-card-retrieve",
+	
+		BlogCardListRoute: "blog-card-list",
+		BlogCardRetrieveRoute: "blog-card-retrieve",
 	},
 	AuthRoute: {
 		LoginRoute: "login",

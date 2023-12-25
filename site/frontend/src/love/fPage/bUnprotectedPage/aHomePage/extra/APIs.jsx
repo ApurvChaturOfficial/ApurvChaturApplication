@@ -19,82 +19,52 @@ const APIs = {
         Redux.dispatch({ type: Redux.action.ReceivedObject, payload: {
           ...Redux.state.ReceivedObject,
           Retrieve: {
-            HeroRetrieve: serverResponse.retrieve?.hero_retrieve?.frontend && {
-              image: serverResponse.retrieve?.hero_retrieve?.frontend?.aImage,
-              title: serverResponse.retrieve?.hero_retrieve?.frontend?.aTitle,
-              subtitle: serverResponse.retrieve?.hero_retrieve?.frontend?.aSubtitle,
-              description: serverResponse.retrieve?.hero_retrieve?.frontend?.aDescription,
-              webLinks: serverResponse.retrieve?.hero_retrieve?.frontend?.dWebLinks,
-              socialLinks: serverResponse.retrieve?.hero_retrieve?.frontend?.dSocialLinks,
+            HeroRetrieve: serverResponse.retrieve?.hero_retrieve && {
+              image: serverResponse.retrieve?.hero_retrieve?.aImage,
+              title: serverResponse.retrieve?.hero_retrieve?.aTitle,
+              subtitle: serverResponse.retrieve?.hero_retrieve?.aSubtitle,
+              description: serverResponse.retrieve?.hero_retrieve?.aDescription,
+
+              links: serverResponse.retrieve?.hero_retrieve?.dLinks,
+              resume: serverResponse.retrieve?.hero_retrieve?.dResume,
             },
-            CounterList: serverResponse.retrieve?.counter_list &&
-              serverResponse.retrieve?.counter_list?.map(each => {
-                return {
-                  image: each?.aImage,
-                  title: each?.aTitle,
-                  subtitle: each?.aSubtitle,
-                  description: each?.aDescription,
-                }
-              }),
-            AboutRetrieve: {
-              actually: serverResponse.retrieve?.about_retrieve?.actually && {
-                image: serverResponse.retrieve?.about_retrieve?.actually?.aImage,
-                title: serverResponse.retrieve?.about_retrieve?.actually?.aTitle,
-                subtitle: serverResponse.retrieve?.about_retrieve?.actually?.aSubtitle,
-              },
-              comparatively: serverResponse.retrieve?.about_retrieve?.comparatively && {
-                image: serverResponse.retrieve?.about_retrieve?.comparatively?.aImage,
-                title: serverResponse.retrieve?.about_retrieve?.comparatively?.aTitle,
-                subtitle: serverResponse.retrieve?.about_retrieve?.comparatively?.aSubtitle,
-              },
-            },    
-            ServiceList: serverResponse.retrieve?.service_list?.map(each => {
-              return {
-                title: each?.aTitle,
-                description: each?.aDescription,
-              }
-            }),
-            BranchRetrieve: serverResponse.retrieve?.branch_retrieve && {
-              title: serverResponse.retrieve?.branch_retrieve?.aTitle,
-              subtitle: serverResponse.retrieve?.branch_retrieve?.aSubtitle,
-              description: serverResponse.retrieve?.branch_retrieve?.aDescription,
-              subBranches: serverResponse.retrieve?.branch_retrieve?.cSubBranches?.map(each => {
-                return {
-                  title: each?.aTitle,
-                  subtitle: each?.aSubtitle,
-                  description: each?.aDescription,
-                  subSubBranches: each?.cSubSubBranches?.map(each1 => {
-                    return {
-                      image: each1?.aImage,
-                      title: each1?.aTitle,
-                      subtitle: each1?.aSubtitle,
-                      status: each1?.aStatus,
-                      links: each1?.dWebLinks,
-                    }
-                  }),    
-                }
-              }),
+            AboutRetrieve: serverResponse.retrieve?.about_retrieve &&{
+              image: serverResponse.retrieve?.about_retrieve?.aImage,
+              title: serverResponse.retrieve?.about_retrieve?.aTitle,
+              subtitle: serverResponse.retrieve?.about_retrieve?.aSubtitle,
+              description: serverResponse.retrieve?.about_retrieve?.aDescription,
+
+              cards: serverResponse.retrieve?.about_retrieve?.dCards,
             },
-            ProjectSectionRetrieve: serverResponse.retrieve?.project_section_retrieve && {
-              title: serverResponse.retrieve?.project_section_retrieve?.aTitle,
-              subtitle: serverResponse.retrieve?.project_section_retrieve?.aSubtitle,
-              description: serverResponse.retrieve?.project_section_retrieve?.aDescription,
-              projectGroups: serverResponse.retrieve?.project_section_retrieve?.cProjectGroups?.map(each => {
-                return {
-                  title: each?.aTitle,
-                  subtitle: each?.aSubtitle,
-                  description: each?.aDescription,
-                  projects: each?.cProjects?.map(each1 => {
-                    return {
-                      image: each1?.aImage,
-                      title: each1?.aTitle,
-                      subtitle: each1?.aSubtitle,
-                      status: each1?.aStatus,
-                      links: each1?.dWebLinks,
-                    }
-                  }),    
-                }
-              }),
+            ExperienceRetrieve: serverResponse.retrieve?.experience_retrieve &&{
+              title: serverResponse.retrieve?.experience_retrieve?.aTitle,
+              subtitle: serverResponse.retrieve?.experience_retrieve?.aSubtitle,
+
+              cards: serverResponse.retrieve?.experience_retrieve?.dCards,
+            },
+            ServiceRetrieve: serverResponse.retrieve?.service_retrieve &&{
+              title: serverResponse.retrieve?.service_retrieve?.aTitle,
+              subtitle: serverResponse.retrieve?.service_retrieve?.aSubtitle,
+
+              cards: serverResponse.retrieve?.service_retrieve?.dCards,
+            },
+            PortfolioRetrieve: serverResponse.retrieve?.portfolio_retrieve &&{
+              title: serverResponse.retrieve?.portfolio_retrieve?.aTitle,
+              subtitle: serverResponse.retrieve?.portfolio_retrieve?.aSubtitle,
+
+              cards: serverResponse.retrieve?.portfolio_retrieve?.cPortfolioCards,
+            },
+            EventRetrieve: serverResponse.retrieve?.event_retrieve &&{
+              title: serverResponse.retrieve?.event_retrieve?.aTitle,
+              subtitle: serverResponse.retrieve?.event_retrieve?.aSubtitle,
+
+              cards: serverResponse.retrieve?.event_retrieve?.cEventCards,
+            },
+            BlogRetrieve: serverResponse.retrieve?.blog_retrieve &&{
+              title: serverResponse.retrieve?.blog_retrieve?.aTitle,
+              subtitle: serverResponse.retrieve?.blog_retrieve?.aSubtitle,
+
+              cards: serverResponse.retrieve?.blog_retrieve?.cBlogCards,
             },
           }
         }})

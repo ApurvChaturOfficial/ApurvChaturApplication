@@ -11,18 +11,12 @@ import SidebarLayoutState from '../eLayout/gSidebarLayout/extra/State';
 
 // Page
 import HomePageState from '../fPage/bUnprotectedPage/aHomePage/extra/State';
-import AboutPageState from '../fPage/bUnprotectedPage/bAboutPage/extra/State';
-import ContactPageState from '../fPage/bUnprotectedPage/cContactpage/extra/State';
-
-import LoginPageState from '../fPage/dAuthenticatedPage/aLoginPage/extra/State';
-import RegisterPageState from '../fPage/dAuthenticatedPage/bRegisterPage/extra/State';
-import ForgotPasswordPageState from '../fPage/dAuthenticatedPage/cForgotPasswordPage/extra/State';
-import ResetPasswordPageState from '../fPage/dAuthenticatedPage/dResetPasswordPage/extra/State';
-
-import ProfileRetrievePageState from '../fPage/fTopbarPage/aProfileReteivePage/extra/State';
-import ProfileUpdatePageState from '../fPage/fTopbarPage/bProfileUpdatePage/extra/State';
-import ProfilePasswordUpdatePageState from '../fPage/fTopbarPage/cProfilePasswordUpdatePage/extra/State';
-import ProfileDeletePageState from '../fPage/fTopbarPage/dProfileDeletePage/extra/State';
+import PortfolioCardListPageState from '../fPage/bUnprotectedPage/bPortfolioCardPage/aPortfolioCardListPage/extra/State';
+import PortfolioCardRetrievePageState from '../fPage/bUnprotectedPage/bPortfolioCardPage/bPortfolioCardRetrievePage/extra/State';
+import EventCardListPageState from '../fPage/bUnprotectedPage/cEventCardPage/aEventCardListPage/extra/State';
+import EventCardRetrievePageState from '../fPage/bUnprotectedPage/cEventCardPage/bEventCardRetrievePage/extra/State';
+import BlogCardListPageState from '../fPage/bUnprotectedPage/dBlogCardPage/aBlogCardListPage/extra/State';
+import BlogCardRetrievePageState from '../fPage/bUnprotectedPage/dBlogCardPage/bBlogCardRetrievePage/extra/State';
 
 
 const RootReducer = combineReducers({
@@ -37,18 +31,15 @@ const RootReducer = combineReducers({
 	
 	// Page
 	HomePageState,
-	AboutPageState,
-	ContactPageState,
 
-	LoginPageState,
-	RegisterPageState,
-	ForgotPasswordPageState,
-	ResetPasswordPageState,
+	PortfolioCardListPageState,
+	PortfolioCardRetrievePageState,
 
-	ProfileRetrievePageState,
-	ProfileUpdatePageState,
-	ProfilePasswordUpdatePageState,
-	ProfileDeletePageState,
+	EventCardListPageState,
+	EventCardRetrievePageState,
+	
+	BlogCardListPageState,
+	BlogCardRetrievePageState,
 
 })  
 
