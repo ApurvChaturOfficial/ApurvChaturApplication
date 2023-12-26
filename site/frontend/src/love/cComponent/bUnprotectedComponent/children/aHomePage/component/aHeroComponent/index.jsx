@@ -45,7 +45,7 @@ const HeroComponent = ({Redux}) => {
 					<img src={object.image.url} alt="" className="" />
 				</div>
 				
-				<a href="#contact" className='scroll__down'>Scroll Down</a>
+				<a href="#about" className='scroll__down'>Scroll Down</a>
 			</div>
 		</header>
 	)

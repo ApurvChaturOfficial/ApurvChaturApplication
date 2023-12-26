@@ -26,7 +26,7 @@ const ExperienceComponent = ({Redux}) => {
 													<BsPatchCheckFill className='experience__details-icon' />
 													<div>
 														<h4>{each1.title}</h4>
-														<small className='text-light' >{each1.sub_title}</small>
+														<small className='text-light' >{each1.subtitle}</small>
 													</div>
 												</article>
 											)

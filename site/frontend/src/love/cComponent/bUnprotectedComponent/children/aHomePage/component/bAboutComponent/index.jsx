@@ -36,7 +36,7 @@ const AboutComponent = ({Redux}) => {
 										each.icon === "experience" ? <AiOutlineUserAdd className='about__icon' ></AiOutlineUserAdd> : <BiAtom className='about__icon' ></BiAtom>
 									}
                   <h5>{each.title}</h5>
-                  <small>{each.sub_title}</small>
+                  <small>{each.subtitle}</small>
                 </article>
               )
             })}
