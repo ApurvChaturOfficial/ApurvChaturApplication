@@ -9,13 +9,13 @@ import Logo2 from "src/love/hAsset//2.png";
 import Logo3 from "src/love/hAsset//3.png";
 
 
-const Footer = ({Redux}) => {
+const Footer = ({ ReduxUltimate, Redux }) => {
 	// Variables
-	const object = Redux?.state?.ReceivedObject?.HomeList
+	const object = Redux.state.ReceivedObject?.Retrieve?.HeroRetrieve
 
 	// JSX	
 	return (
-		// object && 
+		ReduxUltimate.state.RequiredObject.Loading ? null :
 		<footer>
 			<a href='#' className='footer__logo' >	
 				<img 
@@ -32,13 +32,13 @@ const Footer = ({Redux}) => {
 			</a>
 
 			<ul className='permalinks' >
-				<li><a href='#' >Home</a></li>
-				{/* {Redux.state.ReceivedObject.AboutList && <li><a href='#about' >About</a></li>}
-				{Redux.state.ReceivedObject.ExperienceList && <li><a href='#experience' >Experience</a></li>}
-				{Redux.state.ReceivedObject.ServiceList && <li><a href='#service' >Service</a></li>}
-				{Redux.state.ReceivedObject.PortfolioList && <li><a href='#portfolio' >Porfolio</a></li>}
-				{Redux.state.ReceivedObject.EventList && <li><a href='#event' >Event</a></li>}
-				{Redux.state.ReceivedObject.BlogList && <li><a href='#blog' >Blog</a></li>} */}
+				{Redux.state.ReceivedObject?.Retrieve?.HeroRetrieve && <li><a href='#' >Hero</a></li>}
+				{Redux.state.ReceivedObject?.Retrieve?.AboutRetrieve && <li><a href='#about' >About</a></li>}
+				{Redux.state.ReceivedObject?.Retrieve?.ExperienceRetrieve && <li><a href='#experience' >Experience</a></li>}
+				{Redux.state.ReceivedObject?.Retrieve?.ServiceRetrieve && <li><a href='#service' >Service</a></li>}
+				{Redux.state.ReceivedObject?.Retrieve?.PortfolioRetrieve && <li><a href='#portfolio' >Porfolio</a></li>}
+				{Redux.state.ReceivedObject?.Retrieve?.EventRetrieve && <li><a href='#event' >Event</a></li>}
+				{Redux.state.ReceivedObject?.Retrieve?.BlogRetrieve && <li><a href='#blog' >Blog</a></li>}
 			</ul>
 
 			<div className='footer__socials' >

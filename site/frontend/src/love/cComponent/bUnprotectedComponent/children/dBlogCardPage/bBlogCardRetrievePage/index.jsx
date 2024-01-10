@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../../../component/aHeader';
-import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 import "./index.css";
+import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 
-const BlogCardRetrievePageComponent = ({ Redux, ReduxUltimate }) => {
+const BlogCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
   return (
     <React.Fragment>
-      {ReduxUltimate.state.RequiredObject?.Loading ? <Loader /> : 
+      {ReduxUltimate.state.RequiredObject.Loading ? <Loader /> :
         <React.Fragment>
           <Header heading={"Blog"} />
           

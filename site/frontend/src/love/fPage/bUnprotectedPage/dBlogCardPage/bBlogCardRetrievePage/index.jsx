@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +10,12 @@ import APIs from './extra/APIs';
 
 // Component
 import HomePageComponent from 'src/love/cComponent/bUnprotectedComponent/children/aHomePage'
+import BlogCardRetrievePageComponent from 'src/love/cComponent/bUnprotectedComponent/children/dBlogCardPage/bBlogCardRetrievePage';
 
 
 const BlogCardRetrievePage = ({ ReduxUltimate }) => {
+	const { id } = useParams()
+
   // Redux
 	const Redux = {
 		state: useSelector((fullState) => fullState.BlogCardRetrievePageState),
@@ -21,7 +25,7 @@ const BlogCardRetrievePage = ({ ReduxUltimate }) => {
 
 	// API Calls
 	const APICalls = {
-		RetrieveAPICall: () => APIs.RetrieveAPI(Redux, ReduxUltimate)
+		RetrieveAPICall: () => APIs.RetrieveAPI(Redux, ReduxUltimate, id)
 	}	
 
   // All Render
@@ -38,7 +42,7 @@ const BlogCardRetrievePage = ({ ReduxUltimate }) => {
   // JSX
   return (
     <React.Fragment>
-			<HomePageComponent Redux={Redux} ReduxUltimate={ReduxUltimate} />
+			<BlogCardRetrievePageComponent Redux={Redux} ReduxUltimate={ReduxUltimate} />
     </React.Fragment>
   )
 }

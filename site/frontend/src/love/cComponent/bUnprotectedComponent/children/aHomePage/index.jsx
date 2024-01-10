@@ -11,21 +11,21 @@ import BlogComponent from './component/gBlogComponent'
 const HomePageComponent = ({ Redux, ReduxUltimate }) => {
   // JSX
   return (
-  <React.Fragment>
-    {ReduxUltimate.state.RequiredObject?.Loading ? <Loader /> :
-      <React.Fragment>
-        {Redux?.state?.ReceivedObject?.Retrieve?.HeroRetrieve && <HeroComponent Redux={Redux} />}
-        {Redux?.state?.ReceivedObject?.Retrieve?.AboutRetrieve && <AboutComponent Redux={Redux} />}
-        {Redux?.state?.ReceivedObject?.Retrieve?.ExperienceRetrieve && <ExperienceComponent Redux={Redux} />}
-        {Redux?.state?.ReceivedObject?.Retrieve?.ServiceRetrieve && <ServiceComponent Redux={Redux} />}
-        {Redux?.state?.ReceivedObject?.Retrieve?.PortfolioRetrieve && <PortfolioComponent Redux={Redux} />}
-        {Redux?.state?.ReceivedObject?.Retrieve?.EventRetrieve && <EventComponent Redux={Redux} />}
-        {Redux?.state?.ReceivedObject?.Retrieve?.BlogRetrieve && <BlogComponent Redux={Redux} />}
-        {/* <TestimonialComponent Redux={Redux} /> */}
-        {/* <ContactComponent Redux={Redux} /> */}
-      </React.Fragment>
-    }
-  </React.Fragment>
+		<React.Fragment>
+			{ReduxUltimate.state.RequiredObject.Loading ? <Loader /> :
+        <React.Fragment>
+          {Redux?.state?.ReceivedObject?.Retrieve?.HeroRetrieve && <HeroComponent Redux={Redux} />}
+          {Redux?.state?.ReceivedObject?.Retrieve?.AboutRetrieve && <AboutComponent Redux={Redux} />}
+          {Redux?.state?.ReceivedObject?.Retrieve?.ExperienceRetrieve && <ExperienceComponent Redux={Redux} />}
+          {Redux?.state?.ReceivedObject?.Retrieve?.ServiceRetrieve && <ServiceComponent Redux={Redux} />}
+          {Redux?.state?.ReceivedObject?.Retrieve?.PortfolioRetrieve && <PortfolioComponent Redux={Redux} />}
+          {Redux?.state?.ReceivedObject?.Retrieve?.EventRetrieve && <EventComponent Redux={Redux} />}
+          {Redux?.state?.ReceivedObject?.Retrieve?.BlogRetrieve && <BlogComponent Redux={Redux} />}
+          {/* <TestimonialComponent Redux={Redux} /> */}
+          {/* <ContactComponent Redux={Redux} /> */}
+        </React.Fragment>
+      }
+		</React.Fragment>
   )
 }
 

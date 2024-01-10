@@ -7,12 +7,13 @@ import { HashLink } from 'react-router-hash-link';
 import FinalRouteName from 'src/love/gRoute/FinalRouteName';
 
 
-const Navbar = () => {
+const Navbar = ({ ReduxUltimate }) => {
 	// State Variables
 	const [activeNav, setActiveNav] = useState('#')
 
 	// JSX
 	return (
+		ReduxUltimate.state.RequiredObject.Loading ? null :
 		<nav>
 			<HashLink to={`${FinalRouteName.GlobalRoute.HomeRoute}#`} className={activeNav === '#' ? 'active' : ''} onClick={() => setActiveNav('#')} ><AiOutlineHome /></HashLink>
 			<HashLink to={`${FinalRouteName.GlobalRoute.HomeRoute}#about`} className={activeNav === '#about' ? 'active' : ''} onClick={() => setActiveNav('#about')} ><AiOutlineUser /></HashLink>

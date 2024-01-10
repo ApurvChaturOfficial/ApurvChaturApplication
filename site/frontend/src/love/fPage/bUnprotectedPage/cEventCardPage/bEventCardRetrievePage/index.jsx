@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,19 +10,22 @@ import APIs from './extra/APIs';
 
 // Component
 import HomePageComponent from 'src/love/cComponent/bUnprotectedComponent/children/aHomePage'
+import EventCardRetrievePageComponent from 'src/love/cComponent/bUnprotectedComponent/children/cEventCardPage/bEventCardRetrievePage';
 
 
-const EventRetrievePage = ({ ReduxUltimate }) => {
+const EventCardRetrievePage = ({ ReduxUltimate }) => {
+	const { id } = useParams()
+
   // Redux
 	const Redux = {
-		state: useSelector((fullState) => fullState.EventRetrievePageState),
+		state: useSelector((fullState) => fullState.EventCardRetrievePageState),
 		dispatch: useDispatch(),
 		action: Action,
 	};
 
 	// API Calls
 	const APICalls = {
-		RetrieveAPICall: () => APIs.RetrieveAPI(Redux, ReduxUltimate)
+		RetrieveAPICall: () => APIs.RetrieveAPI(Redux, ReduxUltimate, id)
 	}	
 
   // All Render
@@ -38,9 +42,9 @@ const EventRetrievePage = ({ ReduxUltimate }) => {
   // JSX
   return (
     <React.Fragment>
-			<HomePageComponent Redux={Redux} ReduxUltimate={ReduxUltimate} />
+			<EventCardRetrievePageComponent Redux={Redux} ReduxUltimate={ReduxUltimate} />
     </React.Fragment>
   )
 }
 
-export default EventRetrievePage
+export default EventCardRetrievePage

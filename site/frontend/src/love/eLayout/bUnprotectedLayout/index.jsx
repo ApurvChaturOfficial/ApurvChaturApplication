@@ -12,9 +12,10 @@ import APIs from './extra/APIs';
 
 // Component
 import UnprotectedComponent from 'src/love/cComponent/bUnprotectedComponent';
+import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 
 
-const UnprotectedLayout = () => {
+const UnprotectedLayout = ({ ReduxUltimate }) => {
 	// Redux
 	const Redux = {
 		state: useSelector((fullState) => fullState.UnprotectedLayoutState),
@@ -22,15 +23,26 @@ const UnprotectedLayout = () => {
 		action: Action,
 	};
 	
+	// API Calls
+	const APICalls = {
+		HomePageAPICall: () => APIs.HomePageAPI(Redux, ReduxUltimate)
+	}	
+
+  // All Render
+	// First Render
+	useEffect(() => {
+		APICalls.HomePageAPICall()
+	}, [])
+	
 	// Extra Render
-	// useEffect(() => {
-	// 	console.log(Redux.state)
-	// }, [Redux.state])
+	useEffect(() => {
+		console.log(Redux.state)
+	}, [Redux.state])
 
 	// JSX
 	return (
 		<React.Fragment>
-			<UnprotectedComponent>
+			<UnprotectedComponent ReduxUltimate={ReduxUltimate} Redux={Redux} >
 				<Outlet />
 			</UnprotectedComponent>
 		</React.Fragment>

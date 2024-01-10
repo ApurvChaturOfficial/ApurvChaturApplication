@@ -30,12 +30,12 @@ const AuthorisedLayout = ({ ReduxUltimate }) => {
 
 	// All Renders
 	// First Render
-	useEffect(() => {
-		ReduxUltimate.state?.ReceivedObject?.ProfileRetrieve ?
-			null
-			:
-			navigate(FinalRouteName.AuthRoute.LoginRoute)
-	}, [ReduxUltimate.state])
+	// useEffect(() => {
+	// 	ReduxUltimate.state?.ReceivedObject?.ProfileRetrieve ?
+	// 		null
+	// 		:
+	// 		navigate(FinalRouteName.AuthRoute.LoginRoute)
+	// }, [ReduxUltimate.state])
 	
 	// Extra Render
 	// useEffect(() => {

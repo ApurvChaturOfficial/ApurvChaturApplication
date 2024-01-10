@@ -34,23 +34,7 @@ const GlobalLayout = () => {
 		action: Action,
 	};
 
-	// // API Calls
-	// const APICalls = {
-	// 	ProfileRetrieveAPICall: () => APIs.ProfileRetrieveAPI(Redux),
-	// 	LogoutAPICall: () => APIs.LogoutAPI(navigate, Redux),
-	// }
-
-	// All Renders
-	// // First Render
-	// useEffect(() => {
-	// 	APICalls.ProfileRetrieveAPICall()
-	// }, [])
-		
-	// // Second Render
-	// useEffect(() => {
-	// 	Redux.state.ExtraObject?.Halchal && APICalls.ProfileRetrieveAPICall()
-	// }, [Redux.state.ExtraObject])
-		
+	// All Renders		
 	// Extra Render
 	// useEffect(() => {
 	// 	console.log(Redux.state)

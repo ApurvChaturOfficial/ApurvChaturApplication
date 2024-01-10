@@ -2,9 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="Business/ApurvChatur/favicon_io/favicon.ico" />
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/x-icon" href="Business/ApurvChatur/favicon_io/favicon.ico" />
+    <link rel="icon" type="image" href="/favicon.ico" /> -->
+    <link vite-if="import.meta.env.VITE_APPLICATION === ApurvChatur" rel="icon" type="image/x-icon" href="./public/Business/ApurvChatur/favicon_io/favicon.ico" />
+    <link vite-if="import.meta.env.VITE_APPLICATION === AnushreeMandape" rel="icon" type="image/x-icon" href="./public/Business/AnushreeMandape/favicon_io/favicon.ico" />
+    <link vite-if="import.meta.env.VITE_APPLICATION === SofieBerkin" rel="icon" type="image/x-icon" href="./public/Business/SofieBerkin/favicon_io/favicon.ico" />
+    <link vite-else rel="icon" type="image/svg+xml" href="/vite.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apurv Chatur</title>
+
+    <!-- Title -->
+    <title vite-if="import.meta.env.VITE_APPLICATION === ApurvChatur">
+      Apurv Chatur
+    </title>
+    <title vite-if="import.meta.env.VITE_APPLICATION === AnushreeMandape">
+      Anushree Mandape
+    </title>
+    <title vite-if="import.meta.env.VITE_APPLICATION === SofieBerkin">
+      Sofie Berkin
+    </title>
+    
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700"

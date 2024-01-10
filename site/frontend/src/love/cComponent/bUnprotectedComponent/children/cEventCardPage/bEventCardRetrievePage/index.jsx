@@ -1,18 +1,18 @@
 import React from 'react';
 import Header from '../../../component/aHeader';
-import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 import "./index.css";
 import { BsFillCalendarDateFill, BsFillSkipStartFill } from 'react-icons/bs';
 import { BiTargetLock } from 'react-icons/bi';
 import { AiOutlineSend } from 'react-icons/ai';
+import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
 
 
-const EventCardRetrievePageComponent = ({ Redux, ReduxUltimate }) => {
+const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
   return (
-    <React.Fragment>
-      {ReduxUltimate.state.RequiredObject?.Loading ? <Loader /> : 
+		<React.Fragment>
+			{ReduxUltimate.state.RequiredObject.Loading ? <Loader /> :
         <React.Fragment>
-          <Header heading={"Portfolio"} />
+          <Header heading={"Event"} />
           
           <section id='event-card-single_'>
             <div className='container event-card-single__container' >
@@ -79,7 +79,7 @@ const EventCardRetrievePageComponent = ({ Redux, ReduxUltimate }) => {
           </section>
         </React.Fragment>
       }
-    </React.Fragment>
+		</React.Fragment>
   )
 }
 

@@ -4,13 +4,13 @@ import Navbar from './component/cNavbar'
 import Footer from './component/bFooter'
 
 
-const UnprotectedComponent = ({ children }) => {
+const UnprotectedComponent = ({ ReduxUltimate, Redux, children }) => {
   // JSX
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar ReduxUltimate={ReduxUltimate} />
       { children }
-      <Footer />
+      <Footer ReduxUltimate={ReduxUltimate} Redux={Redux} />
     </React.Fragment>
   )
 }

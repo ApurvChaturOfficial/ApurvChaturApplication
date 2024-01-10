@@ -28,6 +28,8 @@ import PortfolioCardListPage from "src/love/fPage/bUnprotectedPage/bPortfolioCar
 import EventCardListPage from "src/love/fPage/bUnprotectedPage/cEventCardPage/aEventCardListPage";
 import BlogCardListPage from "src/love/fPage/bUnprotectedPage/dBlogCardPage/aBlogCardListPage";
 import PortfolioCardRetrievePage from "src/love/fPage/bUnprotectedPage/bPortfolioCardPage/bPortfolioCardRetrievePage";
+import EventCardRetrievePage from "src/love/fPage/bUnprotectedPage/cEventCardPage/bEventCardRetrievePage";
+import BlogCardRetrievePage from "src/love/fPage/bUnprotectedPage/dBlogCardPage/bBlogCardRetrievePage";
 
 
 export default function App2() {
@@ -48,40 +50,40 @@ export default function App2() {
     <BrowserRouter>
       <Routes>
         <Route element={<GlobalLayout ReduxUltimate={Redux} />} >
-            <Route element={<UnprotectedLayout ReduxUltimate={Redux} />} >
-              <Route path={RouteName.GlobalRoute.HomeRoute} element={<HomePage ReduxUltimate={Redux} />} />
+          <Route element={<UnprotectedLayout ReduxUltimate={Redux} />} >
+            <Route path={RouteName.GlobalRoute.HomeRoute} element={<HomePage ReduxUltimate={Redux} />} />
 
-              <Route path={RouteName.GlobalRoute.PortfolioCardListRoute} element={<PortfolioCardListPage ReduxUltimate={Redux} />} />
-              <Route path={`${RouteName.GlobalRoute.PortfolioCardRetrieveRoute}/:id`} element={<PortfolioCardRetrievePage ReduxUltimate={Redux} />} />
+            <Route path={RouteName.GlobalRoute.PortfolioCardListRoute} element={<PortfolioCardListPage ReduxUltimate={Redux} />} />
+            <Route path={`${RouteName.GlobalRoute.PortfolioCardRetrieveRoute}/:id`} element={<PortfolioCardRetrievePage ReduxUltimate={Redux} />} />
 
-              <Route path={RouteName.GlobalRoute.EventCardListRoute} element={<EventCardListPage ReduxUltimate={Redux} />} />
-              {/* <Route path={`${RouteName.GlobalRoute.EventCardRetrieveRoute}/:id`} element={<EventCardListPage ReduxUltimate={Redux} />} /> */}
+            <Route path={RouteName.GlobalRoute.EventCardListRoute} element={<EventCardListPage ReduxUltimate={Redux} />} />
+            <Route path={`${RouteName.GlobalRoute.EventCardRetrieveRoute}/:id`} element={<EventCardRetrievePage ReduxUltimate={Redux} />} />
 
-              <Route path={RouteName.GlobalRoute.BlogCardListRoute} element={<BlogCardListPage ReduxUltimate={Redux} />} />
-              {/* <Route path={`${RouteName.GlobalRoute.BlogCardRetrieveRoute}/:id`} element={<BlogCardListPage ReduxUltimate={Redux} />} /> */}
-            </Route>
-
-            <Route element={<ProtectedLayout ReduxUltimate={Redux} />} >
-              <Route element={<AuthenticatedLayout ReduxUltimate={Redux} />} >
-                {/* <Route path={RouteName.AuthRoute.LoginRoute} element={<LoginPage ReduxUltimate={Redux} />} /> */}
-                {/* <Route path={RouteName.AuthRoute.RegisterRoute} element={<RegisterPage ReduxUltimate={Redux} />} /> */}
-                {/* <Route path={RouteName.AuthRoute.ForgotPasswordRoute} element={<ForgotPasswordPage ReduxUltimate={Redux} />} /> */}
-                {/* <Route path={`${RouteName.AuthRoute.ResetPasswordRoute}/:token`} element={<ResetPasswordPage ReduxUltimate={Redux} />} /> */}
-              </Route>
-
-              <Route element={<AuthorisedLayout ReduxUltimate={Redux} />} >
-                <Route element={<TopbarLayout ReduxUltimate={Redux} />} >
-                  {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfileRetrieveRoute} element={<ProfileRetrievePage ReduxUltimate={Redux} />} /> */}
-                  {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfileUpdateRoute} element={<ProfileUpdatePage ReduxUltimate={Redux} />} /> */}
-                  {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfilePasswordUpdateRoute} element={<ProfilePasswordUpdatePage ReduxUltimate={Redux} />} /> */}
-                  {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfileDeleteRoute} element={<ProfileDeletePage ReduxUltimate={Redux} />} /> */}
-                </Route>
-
-                <Route element={<SidebarLayout ReduxUltimate={Redux} />} >
-                </Route>
-              </Route>
-            </Route>
+            <Route path={RouteName.GlobalRoute.BlogCardListRoute} element={<BlogCardListPage ReduxUltimate={Redux} />} />
+            <Route path={`${RouteName.GlobalRoute.BlogCardRetrieveRoute}/:id`} element={<BlogCardRetrievePage ReduxUltimate={Redux} />} />
           </Route>
+
+          {/* <Route element={<ProtectedLayout ReduxUltimate={Redux} />} > */}
+            {/* <Route element={<AuthenticatedLayout ReduxUltimate={Redux} />} > */}
+              {/* <Route path={RouteName.AuthRoute.LoginRoute} element={<LoginPage ReduxUltimate={Redux} />} /> */}
+              {/* <Route path={RouteName.AuthRoute.RegisterRoute} element={<RegisterPage ReduxUltimate={Redux} />} /> */}
+              {/* <Route path={RouteName.AuthRoute.ForgotPasswordRoute} element={<ForgotPasswordPage ReduxUltimate={Redux} />} /> */}
+              {/* <Route path={`${RouteName.AuthRoute.ResetPasswordRoute}/:token`} element={<ResetPasswordPage ReduxUltimate={Redux} />} /> */}
+            {/* </Route> */}
+
+            {/* <Route element={<AuthorisedLayout ReduxUltimate={Redux} />} > */}
+              {/* <Route element={<TopbarLayout ReduxUltimate={Redux} />} > */}
+                {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfileRetrieveRoute} element={<ProfileRetrievePage ReduxUltimate={Redux} />} /> */}
+                {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfileUpdateRoute} element={<ProfileUpdatePage ReduxUltimate={Redux} />} /> */}
+                {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfilePasswordUpdateRoute} element={<ProfilePasswordUpdatePage ReduxUltimate={Redux} />} /> */}
+                {/* <Route path={RouteName.ContentRoute.TopbarRoute.ProfileDeleteRoute} element={<ProfileDeletePage ReduxUltimate={Redux} />} /> */}
+              {/* </Route> */}
+
+              {/* <Route element={<SidebarLayout ReduxUltimate={Redux} />} > */}
+              {/* </Route> */}
+            {/* </Route> */}
+          {/* </Route> */}
+        </Route>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
