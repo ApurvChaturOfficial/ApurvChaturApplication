@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../../../component/aHeader';
 import "./index.css";
 import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
+import parse from 'html-react-parser';
+
 
 const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
   return (
@@ -22,8 +24,8 @@ const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                 <h2>{Redux.state.ReceivedObject?.PortfolioCardRetrieve?.title}</h2>
                 <h4 style={{marginTop: "0.5em"}} className="text-light" >{Redux.state.ReceivedObject?.PortfolioCardRetrieve?.subtitle}</h4>
 
-                <p>{(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.description || "")}</p>
-                {/* <p>{parse(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.description || "")}</p> */}
+                {/* <p>{(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.description || "")}</p> */}
+                <p>{parse(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.description || "")}</p>
 
                 <div className='portfolio__item-cta' >
                   {Redux.state.ReceivedObject?.PortfolioCardRetrieve?.links &&
@@ -41,8 +43,8 @@ const PortfolioCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
               <div className='container portfolio-card-single__more' >
                 <h3>Details</h3>
                 <div className='rich-text' >
-                  {(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.detail || "")}
-                  {/* {parse(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.detail || "")} */}
+                  {/* {(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.detail || "")} */}
+                  {parse(Redux.state.ReceivedObject?.PortfolioCardRetrieve?.detail || "")}
                 </div>
               </div>
             }

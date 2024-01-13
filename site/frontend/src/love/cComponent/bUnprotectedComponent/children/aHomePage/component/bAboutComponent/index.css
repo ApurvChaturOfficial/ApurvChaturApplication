@@ -60,8 +60,18 @@
     color: var(--color-light);
 }
 
-.about__content p {
-    margin: 2rem 0 2.6rem;
+.about__content p:first-child {
+    margin: 2rem 0 1rem;
+    color: var(--color-light);
+}
+
+.about__content p:not(:first-child) {
+    margin: 1rem 0 1rem;
+    color: var(--color-light);
+}
+
+.about__content p:last-child {
+    margin: 1rem 0 2.6rem;
     color: var(--color-light);
 }
 
@@ -99,9 +109,9 @@
         gap: 1rem;
     }
 
-    .about__content {
+    /* .about__content {
         text-align: center;
-    }
+    } */
 
     .about__content p {
         margin: 1.5rem 0;

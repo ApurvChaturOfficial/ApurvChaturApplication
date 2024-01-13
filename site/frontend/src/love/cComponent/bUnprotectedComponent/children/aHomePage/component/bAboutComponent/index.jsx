@@ -4,6 +4,7 @@ import { BsBuilding } from 'react-icons/bs'
 import { FaAward } from "react-icons/fa";
 import { BiAtom } from "react-icons/bi";
 import { AiOutlineFundProjectionScreen, AiOutlineUserAdd } from "react-icons/ai";
+import parse from 'html-react-parser';
 
 
 const AboutComponent = ({Redux}) => {
@@ -42,7 +43,8 @@ const AboutComponent = ({Redux}) => {
             })}
           </div>
 
-          <p>{object.description}</p>
+          {/* <p>{object.description}</p> */}
+          <div>{parse(object.description)}</div>
 
           <a href='#blog' className='btn' style={{ marginRight: "1.2rem" }} >See Blogs</a>
           <a href='#contact' className='btn btn-primary' >Let's Talk</a>

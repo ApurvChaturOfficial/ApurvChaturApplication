@@ -5,6 +5,7 @@ import { BsFillCalendarDateFill, BsFillSkipStartFill } from 'react-icons/bs';
 import { BiTargetLock } from 'react-icons/bi';
 import { AiOutlineSend } from 'react-icons/ai';
 import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
+import parse from 'html-react-parser';
 
 
 const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
@@ -27,7 +28,7 @@ const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                   {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.complete ? "Event Closed" : "Event Open"} 
                 </span>
                 <h2 style={{marginTop: "0.25em"}}>{Redux.state.ReceivedObject?.EventCardRetrieve?.title}</h2>
-                <h4 style={{marginTop: "0.5em"}} className="text-light" >{Redux.state.ReceivedObject?.EventCardRetrieve?.subTitle}</h4>
+                <h4 style={{marginTop: "0.5em"}} className="text-light" >{Redux.state.ReceivedObject?.EventCardRetrieve?.subtitle}</h4>
                 
                 <div style={{marginTop: "1.5em"}} >
                   <BsFillSkipStartFill className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Start: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.start}</small> <br />
@@ -35,8 +36,8 @@ const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
                   <AiOutlineSend className='event__details-icon' fontSize={"18px"} /><small className='text-light'>Complete: {Redux.state.ReceivedObject?.EventCardRetrieve?.date?.complete}</small>
                 </div>
 
-                <p>{(Redux.state.ReceivedObject?.EventCardRetrieve?.description || "")}</p>
-                {/* <p>{parse(Redux.state.ReceivedObject?.EventCardRetrieve?.description || "")}</p> */}
+                {/* <p>{(Redux.state.ReceivedObject?.EventCardRetrieve?.description || "")}</p> */}
+                <p>{parse(Redux.state.ReceivedObject?.EventCardRetrieve?.description || "")}</p>
 
                 <div className='portfolio__item-cta' >
                   {Redux.state.ReceivedObject?.EventCardRetrieve?.links &&
@@ -55,8 +56,8 @@ const EventCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
               <div className='container portfolio-card-single__more' >
                 <h3>Details</h3>
                 <div className='rich-text' >
-                  {(Redux.state.ReceivedObject?.EventCardRetrieve?.detail || "")}
-                  {/* {parse(Redux.state.ReceivedObject?.EventCardRetrieve?.detail || "")} */}
+                  {/* {(Redux.state.ReceivedObject?.EventCardRetrieve?.detail || "")} */}
+                  {parse(Redux.state.ReceivedObject?.EventCardRetrieve?.detail || "")}
                 </div>
               </div>
             }

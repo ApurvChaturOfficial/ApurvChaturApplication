@@ -62,9 +62,14 @@
   color: var(--color-light);
 }
 
-.blog-card-single__content p {
-  margin: 2rem 0 2.6rem;
+.blog-card-single__content p:nth-child(1) {
+  margin: 2rem 0 1rem;
 }
+
+.blog-card-single__content p {
+  margin: 1rem 0 2.6rem;
+}
+
 
 .blog-card-single__more {
   font-weight: lighter !important;
@@ -101,6 +106,7 @@
 
   .blog-card-single__content p {
       margin: 1rem 0 1.5rem;
+      text-align: left;
   }
 }
 
@@ -118,11 +124,12 @@
   }
 
   .blog-card-single__content {
-      text-align: center;
+    text-align: left;
   }
 
   .blog-card-single__content p {
       margin: 1.5rem 0;
+      text-align: left;
   }
 }
 

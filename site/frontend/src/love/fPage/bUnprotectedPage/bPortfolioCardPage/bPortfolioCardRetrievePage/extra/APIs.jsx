@@ -23,8 +23,8 @@ const APIs = {
 							title: serverResponse.retrieve.aTitle,
 							subtitle: serverResponse.retrieve.aSubtitle,
               description: serverResponse.retrieve.aDescription,
+              detail: serverResponse.retrieve.aDetail,
 
-              detail: serverResponse.retrieve.dDetail,
               links: serverResponse.retrieve.dLinks,
               references: serverResponse.retrieve.dReferences,
 						}

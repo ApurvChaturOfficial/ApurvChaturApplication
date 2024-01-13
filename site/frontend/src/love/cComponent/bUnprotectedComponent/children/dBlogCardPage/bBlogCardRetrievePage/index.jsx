@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../../../component/aHeader';
 import "./index.css";
 import Loader from 'src/love/cComponent/aGlobalComponent/component/aLoader';
+import parse from 'html-react-parser';
+
 
 const BlogCardRetrievePageComponent = ({ ReduxUltimate, Redux }) => {
   return (
