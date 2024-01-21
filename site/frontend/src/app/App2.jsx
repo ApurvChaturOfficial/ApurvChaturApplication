@@ -22,8 +22,6 @@ import SidebarLayout from "src/love/eLayout/gSidebarLayout";
 
 // Page
 import HomePage from "src/love/fPage/bUnprotectedPage/aHomePage";
-
-import RouteName from "src/love/gRoute/RouteName";
 import PortfolioCardListPage from "src/love/fPage/bUnprotectedPage/bPortfolioCardPage/aPortfolioCardListPage";
 import EventCardListPage from "src/love/fPage/bUnprotectedPage/cEventCardPage/aEventCardListPage";
 import BlogCardListPage from "src/love/fPage/bUnprotectedPage/dBlogCardPage/aBlogCardListPage";
@@ -31,8 +29,37 @@ import PortfolioCardRetrievePage from "src/love/fPage/bUnprotectedPage/bPortfoli
 import EventCardRetrievePage from "src/love/fPage/bUnprotectedPage/cEventCardPage/bEventCardRetrievePage";
 import BlogCardRetrievePage from "src/love/fPage/bUnprotectedPage/dBlogCardPage/bBlogCardRetrievePage";
 
+import RouteName from "src/love/gRoute/RouteName";
+import { Helmet } from 'react-helmet-async';
+
 
 export default function App2() {
+  // Variable
+  let helmet = (
+    import.meta.env.VITE_APPLICATION === "ApurvChatur" ? (
+      <Helmet>
+        <title>Apurv Chatur</title>
+        <link rel="icon" href="./public/Business/ApurvChatur/favicon_io/favicon.ico" />
+      </Helmet>
+    ) :
+    import.meta.env.VITE_APPLICATION === "SofieBerkin" ? (
+      <Helmet>
+        <title>Sofie Berkin</title>
+        <link rel="icon" href="./public/Business/SofieBerkin/favicon_io/favicon.ico" />
+      </Helmet>
+    ) :
+    import.meta.env.VITE_APPLICATION === "AnushreeMandape" ? (
+      <Helmet>
+        <title>Anushree Mandape</title>
+        <link rel="icon" href="./public/Business/AnushreeMandape/favicon_io/favicon.ico" />
+      </Helmet>
+    ) : (
+      <Helmet>
+        <title>You are lost in environment...</title>
+      </Helmet>
+    )
+  )
+
   // Redux
 	const Redux = {
 		state: useSelector((fullState) => fullState.GlobalLayoutState),
@@ -48,6 +75,8 @@ export default function App2() {
   // JSX
   return (
     <BrowserRouter>
+      {helmet}
+
       <Routes>
         <Route element={<GlobalLayout ReduxUltimate={Redux} />} >
           <Route element={<UnprotectedLayout ReduxUltimate={Redux} />} >
